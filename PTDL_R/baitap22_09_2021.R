@@ -6,7 +6,7 @@ igfdata <- juul2
 igfdata
 names(igfdata)
 options(width=100)
-setwd("c:\\MinhTriHo\\R")
+setwd("C:\work\stats")
 attach(igfdata)
 mean(age, na.rm = TRUE)
 var(age, na.rm = TRUE)
