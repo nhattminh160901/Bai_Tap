@@ -1,0 +1,21 @@
+import numpy as np
+a = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+#1 Write a Python program to sum all the items in a list. (sum() function)
+print(sum(a))
+#2. Write a Python program to multiply all the items in a list. (math.prod() function)
+print(np.prod(a))
+#3. Write a Python program to get the largest number from a list. (max() function)
+print(max(a))
+#4. Write a Python program to get the smallest number from a list. (min() function)
+print(min(a))
+#5. Write a Python program to sort a list in descending order (sort() function)
+print(np.sort(a)[::-1])
+#6. Write a Python program to sort a list in ascending order (sort() function)
+print(np.sort(a))
+#7. Write a Python program to get the size of a list (len() function)
+print(len(a))
+#8. Write a Python program to get random element(s) of a list (random.choice() function)
+print(np.random.choice(a))
+b = ['j', 'q', 'k', 'a']
+#9. Write a Python program to join two different lists into one (use + or extend() function)
+print(a+b)
