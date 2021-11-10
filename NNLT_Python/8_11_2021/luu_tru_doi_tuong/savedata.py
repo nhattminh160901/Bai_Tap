@@ -24,6 +24,7 @@ for i in range(10):
   phone = random.randint(10000000, 15000000)
   email = name+"@gmail.com"
   per.append(Person(name, phone, email).__dict__)
+print("Person:\n", per)
 newper = sorted(per, key=lambda k:k['name'], reverse=True)
 f = open('Person', 'wb') 
 pickle.dump(newper, f)
@@ -41,6 +42,7 @@ for i in range(10):
   student_sample = Student(name, phone, email)
   student_sample.nhapDuLieu(stuNumber, aveMark)
   stu.append(vars(student_sample))
+print("Student:\n", stu)
 newstu = sorted(stu, key=lambda k:k['aveMark'], reverse=True)
 f = open('Student', 'wb') 
 pickle.dump(newstu, f)
@@ -55,6 +57,7 @@ for i in range(10):
   professor_sample = Professor(name, phone, email)
   professor_sample.nhapDuLieu(salary)
   pro.append(vars(professor_sample))
+print("Professor:\n", pro)
 newpro = sorted(pro, key=lambda k:k['salary'], reverse=False)
 f = open('Professor', 'wb') 
 pickle.dump(newpro, f)
