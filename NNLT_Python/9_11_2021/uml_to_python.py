@@ -14,7 +14,8 @@ class Item:
     
 
 class OrderDetails(Item):
-    def add(self, quantity, taxStatus:str):
+    def __init__(self, shippingWeight, description:str, quantity, taxStatus:str):
+        super().__init__(shippingWeight, description)
         self.quantity = quantity
         self.taxStatus = taxStatus
 
@@ -28,10 +29,10 @@ class OrderDetails(Item):
         pass
 
 class Order:
-    def __init__(self, date, status:str, s_o:OrderDetails): 
+    def __init__(self, date, status:str): 
         self.date = date
         self.status = status
-        self.s_o = s_o
+        self.s_o = OrderDetails
     def calcSubTotal(self):
         return self.s_o.calcSubTotal()
 
