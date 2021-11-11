@@ -28,7 +28,7 @@ class OrderDetails(Item):
         pass
 
 class Order:
-    def __init__(self, date, status:str, s_o: OrderDetails): 
+    def __init__(self, date, status:str, s_o:OrderDetails): 
         self.date = date
         self.status = status
         self.s_o = s_o
@@ -54,11 +54,13 @@ class Payment:
         self.amount = amount        
 
 class Cash(Payment):
-    def add(self, cashTendered:float):
+    def __init__(self, amount:float, cashTendered:float):
+        super().__init__(amount)
         self.cashTendered = cashTendered
 
 class Check(Payment):
-    def add(self, name:str, bankID:str):
+    def __init__(self, amount:float, name:str, bankID:str):
+        super().__init__(amount)
         self.name = name
         self.bankID = bankID
 
@@ -66,7 +68,8 @@ class Check(Payment):
         pass
 
 class Credit(Payment):
-    def add(self, number:str, type:str, expDate):
+    def __init__(self, amount:float, number:str, type:str, expDate):
+        super().__init__(amount)
         self.number = number
         self.type = type
         self.expDate = expDate
