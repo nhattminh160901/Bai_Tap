@@ -8,12 +8,14 @@ class Person:
     self.email = email
 
 class Student(Person):
-  def nhapDuLieu(self, stuNumber, aveMark):
+  def __init__(self, name, phoneNumber, email, stuNumber, aveMark):
+    super().__init__(name, phoneNumber, email)
     self.stuNumber = stuNumber
     self.aveMark = aveMark
 
 class Professor(Person):
-  def nhapDuLieu(self, salary):
+  def __init__(self, name, phoneNumber, email, salary):
+    super().__init__(name, phoneNumber, email)
     self.salary = salary
 
 
@@ -36,12 +38,11 @@ list_Last_name = ["Nguyen", "Ho", "Tran", "Ly", "Le", "Stacy"]
 stu = []
 for i in range(10):
   name = random.choice(list_first_name)+" "+random.choice(list_Last_name)
-  phone = random.randint(10000000, 15000000)
-  email = f'{name}@gmail.com'.replace(" ","")
-  stuNumber = random.randint(20000000, 30000000)
+  phone = random.randint(10000000,15000000)
+  email = f"{name}@gmail.com".replace(" ","")
+  stuNumber = random.randint(20000000,30000000)
   aveMark = random.randint(0, 10)
-  student_sample = Student(name, phone, email)
-  student_sample.nhapDuLieu(stuNumber, aveMark)
+  student_sample = Student(name, phone, email, stuNumber, aveMark)
   stu.append(vars(student_sample))
 print("Student:\n", stu)
 newstu = sorted(stu, key=lambda k:k["aveMark"], reverse=True)
@@ -53,11 +54,10 @@ f.close()
 pro = []
 for i in range(10):
   name = random.choice(list_first_name)+" "+random.choice(list_Last_name)
-  phone = random.randint(10000000, 15000000)
-  email = f'{name}@gmail.com'.replace(" ","")
+  phone = random.randint(10000000,15000000)
+  email = f"{name}@gmail.com".replace(" ","")
   salary = random.randint(6000000, 30000000)
-  professor_sample = Professor(name, phone, email)
-  professor_sample.nhapDuLieu(salary)
+  professor_sample = Professor(name, phone, email, salary)
   pro.append(vars(professor_sample))
 print("Professor:\n", pro)
 newpro = sorted(pro, key=lambda k:k["salary"], reverse=False)
